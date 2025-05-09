@@ -1,7 +1,6 @@
 import 'package:eCommerce/data/service/auth/auth_service.dart';
 import 'package:eCommerce/presentation/screens/auth/signup_screen.dart';
-import 'package:eCommerce/presentation/screens/bottomscreens/home_-screen.dart';
-
+import 'package:eCommerce/presentation/screens/bottomscreens/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
     if (result != null) {
       Get.snackbar('Success', 'Logged in successfully');
-      Get.to(() => HomePageTest());
+      Get.to(() => BottomNavScreen());
     }
   }
 
