@@ -3,6 +3,7 @@ import 'package:eCommerce/presentation/screens/bottomscreens/category_screens.da
 import 'package:eCommerce/presentation/screens/bottomscreens/home_screen.dart';
 import 'package:eCommerce/presentation/screens/bottomscreens/search_screen.dart';
 import 'package:eCommerce/presentation/screens/bottomscreens/wishlist_screen.dart';
+import 'package:eCommerce/presentation/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -50,7 +51,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
             ),
             onPressed: () {
               // Navigate to profile screen or show dialog
-              // Navigator.push(context, MaterialPageRoute(builder: (_) => ProfileScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProfileScreen()),
+              );
             },
           ),
         ],

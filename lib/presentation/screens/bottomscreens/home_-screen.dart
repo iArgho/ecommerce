@@ -1,18 +1,18 @@
 import 'package:eCommerce/data/model/product_model.dart';
-import 'package:eCommerce/data/service/api_service.dart';
+import 'package:eCommerce/data/service/network/api_service.dart';
 import 'package:eCommerce/presentation/screens/widgets/product_cart.dart';
 import 'package:flutter/material.dart';
 
 enum ProductEvent { fetch, search, sort }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePageTest extends StatefulWidget {
+  const HomePageTest({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageTest> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePageTest> {
   List<Product> _allProducts = [];
   List<Product> _filteredProducts = [];
   bool _isLoading = true;

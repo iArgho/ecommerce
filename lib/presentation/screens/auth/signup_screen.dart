@@ -1,7 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:eCommerce/data/service/auth/auth_service.dart';
+import 'package:eCommerce/presentation/screens/auth/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'signin_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -19,23 +19,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _confirmPasswordController = TextEditingController();
   final _addressController = TextEditingController();
 
+  final AuthService _authService = AuthService();
+
   Future<void> _signUp() async {
-    try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
-      );
+    final result = await _authService.signUp(
+      _emailController.text,
+      _passwordController.text,
+    );
+
+    if (result != null) {
       Get.snackbar('Success', 'Account created successfully');
       Get.off(() => const SignInScreen());
-    } catch (e) {
-      Get.snackbar('Signup Failed', e.toString());
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Sign Up")),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
