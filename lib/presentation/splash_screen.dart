@@ -34,11 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 16),
             const Text(
               'eCommerce',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: AppColor.primaryColor,
-              ),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
             const Spacer(flex: 2),
             Padding(

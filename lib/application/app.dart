@@ -9,7 +9,6 @@ class eCommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // Change to GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

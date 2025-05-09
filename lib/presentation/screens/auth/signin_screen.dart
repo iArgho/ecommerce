@@ -1,4 +1,5 @@
 import 'package:eCommerce/presentation/screens/auth/signup_screen.dart';
+import 'package:eCommerce/presentation/screens/bottomscreens/bottom_nav_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -87,6 +88,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _login();
+                        Get.to(() => BottomNavScreen());
                       }
                     },
                     child: const Text('Login'),
