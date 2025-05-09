@@ -1,0 +1,2 @@
+# ecommerce
+A Flutter-based eCommerce application that features user authentication powered by Firebase Authentication (email & password login/registration). Product data and other related content are fetched using the FakeStore API, providing a realistic shopping experience. The app includes modern UI components, a bottom navigation bar, and dynamic product detail views. It serves as a practical full-stack demo combining real-time authentication with a mock commerce backend.
