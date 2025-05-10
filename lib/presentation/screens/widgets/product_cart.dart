@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:eCommerce/data/model/product_model.dart';
 import 'package:eCommerce/presentation/screens/product/product_details_screen.dart';
-import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(8),
       onTap: () {
         Navigator.push(
           context,
@@ -20,15 +20,14 @@ class ProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        margin: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
             ),
           ],
         ),
@@ -37,36 +36,36 @@ class ProductCard extends StatelessWidget {
           children: [
             // Image
             Container(
-              height: 160,
+              height: 100,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.grey[100],
                 borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(12),
+                  top: Radius.circular(8),
                 ),
               ),
               child: ClipRRect(
                 borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(12),
+                  top: Radius.circular(8),
                 ),
                 child: Image.network(
                   product.image,
                   fit: BoxFit.cover,
                   errorBuilder:
                       (_, __, ___) => const Center(
-                        child: Icon(Icons.image, size: 40, color: Colors.grey),
+                        child: Icon(Icons.image, size: 30, color: Colors.grey),
                       ),
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 6),
             // Title
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
                 product.title,
                 style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 13,
                   fontWeight: FontWeight.w600,
                   color: Colors.black87,
                 ),
@@ -74,41 +73,36 @@ class ProductCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const SizedBox(height: 6),
-            // Price
+            const SizedBox(height: 4),
+            // Price + Rating Row
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Text(
-                '\$${product.price.toStringAsFixed(2)}',
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.deepOrange,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            const SizedBox(height: 6),
-            // Rating
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 children: [
-                  const Icon(Icons.star, size: 14, color: Colors.amber),
-                  const SizedBox(width: 4),
                   Text(
-                    '${product.rating}',
-                    style: const TextStyle(fontSize: 12, color: Colors.black87),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '(${product.count})',
-                    style: const TextStyle(fontSize: 11, color: Colors.grey),
+                    '\$${product.price.toStringAsFixed(2)}',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.deepOrange,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   const Spacer(),
+                  const Icon(Icons.star, size: 12, color: Colors.amber),
+                  const SizedBox(width: 2),
+                  Text(
+                    '${product.rating}',
+                    style: const TextStyle(fontSize: 11, color: Colors.black87),
+                  ),
+                  const SizedBox(width: 2),
+                  Text(
+                    '(${product.count})',
+                    style: const TextStyle(fontSize: 10, color: Colors.grey),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 6),
           ],
         ),
       ),

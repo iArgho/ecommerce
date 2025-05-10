@@ -79,14 +79,14 @@ class _SearchScreenState extends State<SearchScreen> {
                             ? const Center(child: Text('No products found'))
                             : GridView.builder(
                               padding: const EdgeInsets.symmetric(
-                                horizontal: 16,
+                                horizontal: 12,
                               ),
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
+                                    crossAxisCount: 3,
                                     mainAxisSpacing: 12,
-                                    crossAxisSpacing: 12,
-                                    childAspectRatio: 0.69,
+                                    crossAxisSpacing: 6,
+                                    childAspectRatio: 0.75,
                                   ),
                               itemCount: _filteredProducts.length,
                               itemBuilder: (context, index) {

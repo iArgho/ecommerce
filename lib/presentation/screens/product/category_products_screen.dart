@@ -50,14 +50,13 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
 
           final products = snapshot.data!;
           return GridView.builder(
-            padding: const EdgeInsets.all(8),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 0.62,
-            ),
             itemCount: products.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              childAspectRatio: 0.75,
+            ),
             itemBuilder: (context, index) {
               return ProductCard(product: products[index]);
             },
