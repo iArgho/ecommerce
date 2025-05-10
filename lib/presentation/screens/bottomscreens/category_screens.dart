@@ -9,7 +9,6 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Categories'), centerTitle: true),
       body: FutureBuilder<List<Category>>(
         future: ApiService.fetchCategories(),
         builder: (context, snapshot) {
@@ -24,17 +23,30 @@ class CategoryScreen extends StatelessWidget {
           final categories = snapshot.data!;
           return Padding(
             padding: const EdgeInsets.all(12.0),
-            child: GridView.builder(
-              itemCount: categories.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-                childAspectRatio: 1,
-              ),
-              itemBuilder: (context, index) {
-                return CategoryCard(categoryName: categories[index].name);
-              },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Categories',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 12),
+                Expanded(
+                  child: GridView.builder(
+                    itemCount: categories.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: .9,
+                        ),
+                    itemBuilder: (context, index) {
+                      return CategoryCard(categoryName: categories[index].name);
+                    },
+                  ),
+                ),
+              ],
             ),
           );
         },

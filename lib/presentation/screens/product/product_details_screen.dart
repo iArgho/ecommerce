@@ -1,10 +1,14 @@
-import 'package:eCommerce/data/model/product_model.dart';
+import 'package:eCommerce/data/controller/WishlistController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:eCommerce/data/model/product_model.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;
 
-  const ProductDetailsScreen({super.key, required this.product});
+  ProductDetailsScreen({super.key, required this.product});
+
+  final WishlistController wishlistController = Get.put(WishlistController());
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +22,21 @@ class ProductDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
+        actions: [
+          // Wishlist icon in app bar
+          Obx(() {
+            final isWishlisted = wishlistController.isInWishlist(product);
+            return IconButton(
+              icon: Icon(
+                isWishlisted ? Icons.favorite : Icons.favorite_border,
+                color: isWishlisted ? Colors.red : Colors.black,
+              ),
+              onPressed: () {
+                wishlistController.toggleWishlist(product);
+              },
+            );
+          }),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -102,9 +121,7 @@ class ProductDetailsScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          onPressed: () {
-            // TODO: Add to cart or buy now
-          },
+          onPressed: () {},
           child: const Text(
             'Buy Now',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

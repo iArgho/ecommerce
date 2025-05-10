@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:eCommerce/application/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:eCommerce/data/model/product_model.dart';
 import 'package:eCommerce/presentation/screens/product/product_details_screen.dart';
@@ -26,7 +27,7 @@ class ProductCarousel extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColor.primaryColor.withOpacity(0.25),
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
