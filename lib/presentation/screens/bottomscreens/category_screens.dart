@@ -27,7 +27,7 @@ class CategoryScreen extends StatelessWidget {
             child: GridView.builder(
               itemCount: categories.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Or 3 depending on screen size
+                crossAxisCount: 3,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 childAspectRatio: 1,

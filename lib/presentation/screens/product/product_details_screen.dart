@@ -1,0 +1,116 @@
+import 'package:eCommerce/data/model/product_model.dart';
+import 'package:flutter/material.dart';
+
+class ProductDetailsScreen extends StatelessWidget {
+  final Product product;
+
+  const ProductDetailsScreen({super.key, required this.product});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          product.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Product Image
+            AspectRatio(
+              aspectRatio: 1,
+              child: Image.network(
+                product.image,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                errorBuilder:
+                    (_, __, ___) => const Center(
+                      child: Icon(Icons.image, size: 60, color: Colors.grey),
+                    ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Title
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                product.title,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // Price
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text(
+                '\$${product.price.toStringAsFixed(2)}',
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.deepOrange,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            // Rating
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  const Icon(Icons.star, size: 16, color: Colors.amber),
+                  const SizedBox(width: 4),
+                  Text(
+                    '${product.rating}',
+                    style: const TextStyle(fontSize: 14),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    '(${product.count} reviews)',
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Description
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                product.description,
+                style: const TextStyle(fontSize: 14, color: Colors.black87),
+              ),
+            ),
+            const SizedBox(height: 80),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepOrange,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          onPressed: () {
+            // TODO: Add to cart or buy now
+          },
+          child: const Text(
+            'Buy Now',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+}

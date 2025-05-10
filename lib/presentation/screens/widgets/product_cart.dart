@@ -1,4 +1,5 @@
 import 'package:eCommerce/data/model/product_model.dart';
+import 'package:eCommerce/presentation/screens/product/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -10,7 +11,14 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(12),
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ProductDetailsScreen(product: product),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.all(4),
         decoration: BoxDecoration(
@@ -51,9 +59,7 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 10),
-
             // Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -68,9 +74,7 @@ class ProductCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-
             const SizedBox(height: 6),
-
             // Price
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -83,9 +87,7 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 6),
-
             // Rating
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -106,7 +108,6 @@ class ProductCard extends StatelessWidget {
                 ],
               ),
             ),
-
             const SizedBox(height: 10),
           ],
         ),

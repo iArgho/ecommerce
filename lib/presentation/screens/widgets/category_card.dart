@@ -1,5 +1,6 @@
-import 'package:eCommerce/application/theme/app_color.dart';
+import 'package:eCommerce/presentation/screens/product/category_products_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:eCommerce/application/theme/app_color.dart';
 
 class CategoryCard extends StatelessWidget {
   final String categoryName;
@@ -8,34 +9,44 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 80,
-            width: 80,
-            decoration: BoxDecoration(
-              color: AppColor.primaryColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(
-              Icons.category,
-              size: 50,
-              color: AppColor.primaryColor,
-            ),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => CategoryProductsScreen(category: categoryName),
           ),
-          const SizedBox(height: 4),
-          Text(
-            categoryName,
-            style: const TextStyle(
-              color: AppColor.primaryColor,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 80,
+              width: 80,
+              decoration: BoxDecoration(
+                color: AppColor.primaryColor.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.category,
+                size: 50,
+                color: AppColor.primaryColor,
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 4),
+            Text(
+              categoryName,
+              style: const TextStyle(
+                color: AppColor.primaryColor,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
