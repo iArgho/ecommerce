@@ -15,10 +15,11 @@ A Flutter-based eCommerce application featuring user authentication via Firebase
 ⸻
 
 📸 Screenshots
-
-![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 47 10](https://github.com/user-attachments/assets/1d5a8cd6-7b62-4e80-b946-8dac1e5d0384)![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 53 17](https://github.com/user-attachments/assets/42099093-0bf3-41d5-8e87-4d2e7168e9bb)
-
-![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 47 14](https://github.com/user-attachments/assets/4db0060d-1cf0-4856-9523-0bee0d38c9b9)
-![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 47 19](https://github.com/user-attachments/assets/ec04e338-450f-4c39-bc8c-c48d7cb54d03)
-![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 47 24](https://github.com/user-attachments/assets/e54cbd06-6a8c-479a-808a-599fa95d3af7)
-![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 00 47 27](https://github.com/user-attachments/assets/8ff01a2a-d228-407d-a4c0-3b88fdf47422)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 02 48](https://github.com/user-attachments/assets/edbd1ac2-4e39-400a-9de5-bcabe30bf6c4)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 02 52](https://github.com/user-attachments/assets/2d18b5e2-30c0-4bd9-93a9-d066438a4252)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 02 55](https://github.com/user-attachments/assets/046ca361-eeb6-4004-8c1a-15fe2eb59f88)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 03 39](https://github.com/user-attachments/assets/dc82455e-0284-4ad8-9bd8-e386cf69c9ef)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 03 43](https://github.com/user-attachments/assets/f7aa7ca3-8799-47ba-914d-efe8349d2a2a)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 04 08](https://github.com/user-attachments/assets/721dac7f-d06a-4525-9420-31a4b75fd27b)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 04 31](https://github.com/user-attachments/assets/29e9c4ec-2eb6-4d0a-a400-bf9600c83a82)
+![Simulator Screenshot - iPhone 16 Plus - 2025-05-11 at 13 04 59](https://github.com/user-attachments/assets/d64061c3-a23c-46a7-a23c-7dede953dea8)
