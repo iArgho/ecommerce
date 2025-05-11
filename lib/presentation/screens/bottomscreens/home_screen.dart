@@ -30,9 +30,9 @@ class HomeScreen extends StatelessWidget {
               final topRated =
                   products.where((p) => p.rating != null).toList()
                     ..sort((a, b) => b.rating.compareTo(a.rating!));
-              final topRated9 = topRated.take(9).toList();
+              final topRated9 = topRated.take(6).toList();
 
-              final newlyArrived9 = products.reversed.take(9).toList();
+              final newlyArrived9 = products.reversed.take(6).toList();
 
               return SingleChildScrollView(
                 padding: const EdgeInsets.all(8.0),

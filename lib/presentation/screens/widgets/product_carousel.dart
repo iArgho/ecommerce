@@ -25,7 +25,7 @@ class ProductCarousel extends StatelessWidget {
             );
           },
           child: Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
               color: AppColor.primaryColor.withOpacity(0.25),
               borderRadius: BorderRadius.circular(12),
